@@ -1,0 +1,45 @@
+---
+import disolesNavbar from "../assets/disoles-navbar.webp";
+import Dropdown from "./Dropdown.vue";
+
+---
+<header class="w-full text-gray-700 relative bg-white border-t border-gray-100 shadow-sm leading-normal">
+  <div class="container flex flex-col flex-wrap items-center p-4 mx-auto md:flex-row">
+    <nav class="flex flex-wrap items-center text-base lg:w-2/5 md:ml-auto">
+      <a href="#_" class="navi">Inicio</a>
+      <Dropdown title="Disoles" op1="Nosotros" op2="Proyectos" op3="Normas" client:load/>
+      <a href="#_" class="navi">Servicios</a>
+    </nav>
+    <a class="flex items-center order-first mb-4 font-medium text-gray-900 lg:order-none lg:w-1/5 title-font lg:items-center lg:justify-center md:mb-0">
+      <img class="w-auto h-30 fill-current transform transition-transform duration-300 hover:scale-110"
+        src={disolesNavbar.src}
+      />
+    </a>
+    <div
+      class="inline-flex items-center h-full ml-5 lg:w-2/5 lg:justify-end lg:ml-0">
+      <Dropdown title="Intranet" op1="Webmail" op2="Disolesapp" op3="Proximamente..." client:load/>
+      <a
+        href="#_"
+        class="px-4 py-2 text-xs font-bold text-white uppercase bg-[#111827] rounded shadow outline-none ease transform transition-transform duration-300 hover:scale-110">
+        Contacto
+      </a>
+    </div>
+  </div>
+</header>
+
+<style type="text/tailwindcss">
+@import 'tailwindcss/utilities';
+@layer utilities{
+    .navi {
+        @apply relative mr-5 tracking-[1px] font-bold hover:text-blue-700;
+      }
+    
+      .navi::after {
+        @apply content-[''] bg-yellow-500 h-[3px] w-[0%] left-0 -bottom-[5px] rounded-xl duration-300 absolute 
+      }
+    
+      .navi:hover::after {
+        @apply w-[100%]
+      }
+}
+</style>
