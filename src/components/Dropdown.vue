@@ -1,25 +1,24 @@
 <template>
-<div @click="open=!open" class="transition-all duration-700 inline-flex flex-col items-center">
-    <button class="navi inline-flex items-center">
-        {{ props.title }}
-        <img class="w-2.5 h-2.5 ml-2.5" src="../assets//icons/down.svg" />
-</button>
+    <div @click="open = !open" class="transition-all duration-700 inline-flex flex-col items-center">
+        <button class="navi inline-flex items-center">
+            {{ props.title }}
+            <img class="w-2.5 h-2.5 ml-2.5" src="../assets//icons/down.svg" />
+        </button>
 
-<div v-if="open" class="absolute z-10 bottom-[-105px] bg-white rounded-lg shadow-md w-36">
-    <ul class="py-2 text-sm">
-      <li>
-        <a href="#" class="block px-4 py-2 naviD">{{ props.op1 }}</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 naviD">{{ props.op2 }}</a>
-      </li>
-      <li>
-        <a href="#" class="block px-4 py-2 naviD">{{ props.op3 }}</a>
-      </li>
-    </ul>
-</div>
-
-</div>
+        <div v-if="open" class="absolute z-10 bottom-[-105px] bg-white rounded-lg shadow-md w-36">
+            <ul class="py-2 text-sm">
+                <li>
+                    <a href="#" class="block px-4 py-2 naviD">{{ props.op1 }}</a>
+                </li>
+                <li>
+                    <a href="#" class="block px-4 py-2 naviD">{{ props.op2 }}</a>
+                </li>
+                <li>
+                    <a href="#" class="block px-4 py-2 naviD">{{ props.op3 }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </template>
 
 <script setup>
