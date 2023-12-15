@@ -3,21 +3,20 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Content from '../components/Content.astro';
 import Card from '../components/Card.vue';
+import Separator from '../components/Separator.astro';
+import Button from "../components/Button.astro";
 
 import DisolesImg from '../assets/disoles-img.webp';
 import DisolesProyects from '../assets/disoles-proyectos.webp';
 import DisolesServices from '../assets/disoles-servicios.webp';
-import DisolesIcon from '../assets/icons/disoles-icon.svg';
 ---
 
 <Layout title="¡Bienvenido a Disoles!">
 	<main class="mx-auto min-h-screen bg-white min-w-screen">
 			<Header />
 			<Content />
-			<div class="bg-blue-950 my-4">
-				<h2 class="text-lg flex justify-center">DISOLES S.A.S <img class="mx-2" src={DisolesIcon.src}></h2>
-			</div>
-			<div class="flex flex-wrap -m-4 mx-4">
+			<Separator />
+			<div class="flex flex-wrap -m-4 mx-4 py-8">
 				<Card 
 				title='Nosotros'
 				img={DisolesImg.src}
@@ -36,8 +35,31 @@ import DisolesIcon from '../assets/icons/disoles-icon.svg';
 				  text='Conozca nuestra experiencia en proyectos realizados. Clientes que confiaron en nosotros y que hoy son parte nuestros casos de éxito en los cuales se evidencia el profesionalismo, dedicación, responsabilidad y entrega a la hora de hacer nuestro trabajo.'
 				   client:load/>
 			</div>
-			<div>
-				
+			<div class="py-8"></div>
+			<div class="flex justify-between px-24 py-10 max-w-screen-xl mx-auto border border-t shadow-xl border-gray-200 text-white backImage my-4 rounded-2xl">
+				<div class="max-w-md">
+					<h3 class="pt-4 text-6xl font-bold tracking-tighter leading-tight">
+						<span class="whitespace-nowrap">¿Tienes un proyecto?</span>
+					  </h3>
+					<p class="pt-8 text-lg font-normal leading-relaxed">
+						Realizamos diseños estructurales óptimos y eficientes que cumplan con los
+						requisitos establecidos por la normativa vigente, garantizando la calidad
+						y seguridad de los proyectos.
+					  </p>
+					  <div class="flex pt-8 space-x-6">
+						<Button name="Contactar ahora" />
+					  </div>
+				</div>
 			</div>
 	</main>
 </Layout>
+
+<style>
+.backImage {
+  background-image: url('../assets/disoles-contactanos.webp'); 
+  background-size: cover; 
+  background-position: center;
+  backdrop-filter: blur(8px);
+}
+
+</style>
