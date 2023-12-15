@@ -2,11 +2,42 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Content from '../components/Content.astro';
+import Card from '../components/Card.vue';
+
+import DisolesImg from '../assets/disoles-img.webp';
+import DisolesProyects from '../assets/disoles-proyectos.webp';
+import DisolesServices from '../assets/disoles-servicios.webp';
+import DisolesIcon from '../assets/icons/disoles-icon.svg';
 ---
 
 <Layout title="¡Bienvenido a Disoles!">
-	<main class="mx-auto min-h-screen bg-gray-200 min-w-screen">
+	<main class="mx-auto min-h-screen bg-white min-w-screen">
 			<Header />
 			<Content />
+			<div class="bg-blue-950 my-4">
+				<h2 class="text-lg flex justify-center">DISOLES S.A.S <img class="mx-2" src={DisolesIcon.src}></h2>
+			</div>
+			<div class="flex flex-wrap -m-4 mx-4">
+				<Card 
+				title='Nosotros'
+				img={DisolesImg.src}
+				text='DISOLES S.A.S. es una empresa dedicada a la consultoría estructural, vial, ejecución de obras civiles, interventoría e investigaciones, enfocada en ofrecer las mejores soluciones integrales de ingeniería, para satisfacer las necesidades de nuestros clientes.'
+				 client:load/>
+
+				 <Card 
+				 title='Nuestros Servicios'
+				 img={DisolesServices.src}
+				 text='Nos caracterizamos por garantizar la calidad en todos nuestros servicios, basados en una amplia experiencia, con personal altamente calificado, mejoramiento continuo, normativas vigentes y aplicación de tecnologías de punta.'
+				  client:load/>
+
+				  <Card 
+				  title='Proyectos'
+				  img={DisolesProyects.src}
+				  text='Conozca nuestra experiencia en proyectos realizados. Clientes que confiaron en nosotros y que hoy son parte nuestros casos de éxito en los cuales se evidencia el profesionalismo, dedicación, responsabilidad y entrega a la hora de hacer nuestro trabajo.'
+				   client:load/>
+			</div>
+			<div>
+				
+			</div>
 	</main>
 </Layout>
